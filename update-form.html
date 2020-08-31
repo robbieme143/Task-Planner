@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <main>
+    <form class="container bg-secondary">
+      <br>
+      <section class="form-group">
+        <label>Priority</label><br>
+				<select class="form-control" name="priority">
+					<option value=1>1</option>
+					<option value=2>2</option>
+					<option value=3>3</option>
+				</select>
+      </section>
+      <br>
+      <section class="form-group">
+        <label>Description:</label><br>
+        <textarea class="form-control" name="description" placeholder="Description"></textarea>
+      </section>
+      <br>
+      <section class="form-group">
+        <label>Assigned to:</label><br>
+        <select class="form-control" name="assignee">
+          <option value="rob">Rob</option>
+          <option value="jason">Jason</option>
+          <option value="tim">Tim</option>
+          <option value="ken">Ken</option>
+        </select>
+      </section>
+      <br>
+      <section class="form-group">
+        <label>Due Date:</label><br>
+        <input class="form-control" type="date" name="dueDate">
+      </section>
+      <br>
+      <section class="form-group">
+        <label>Status</label><br>
+        <select class="form-control" name="assignee">
+          <option value="completed">Completed</option>
+          <option value="started">Started</option>
+          <option value="notStarted">Not Started</option>
+        </select>
+      </section>
+      <br>
+      <section class="container"  style="padding-bottom:50px">
+        <div class="row" >  
+               <div class="col">
+               <button type="button" class="btn btn-success btn-lg">Update</button>
+               </div>
+               <div class="col">
+               <button type="button" class="btn btn btn-danger btn-lg">Delete</button>
+               </div>
+               <div class="col">
+                <button type="button" class="btn btn-warning btn-lg">Close</button>
+              </div>
+        </div>
+     </section>
+    </form>
+  </main>
+</body>
+</html>
