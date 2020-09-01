@@ -5,92 +5,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Task Planner</title>
-
-  <style>
-
-    .layout {
-      border: 5px solid lightskyblue;
-      border-radius: 15px;
-      background: mediumspringgreen;
-      overflow: hidden;
-      padding: 5%;
-    }
-
-    table, th,  td {
-      border: thin solid darkmagenta;
-      border-collapse: collapse;
-      text-align: center;
-    }
-
-    th {
-      background-color: lightgreen;
-      color:darkslateblue;
-      padding: 5px;
-      width: 20%;
-
-    }
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   </style>
 
 </head>
 <body>
 
-  <main class="layout">
+  <main class="container bg-white">
+    <article class="container bg-success mt-5 p-2">
+      <section class="p-3">
+        <h1 class="text-white">Task Planner</h1><br>
+        <input type="submit" name="newTask" value="Create a New Task">
+      </section>
+    
+    <section class="list-group p-3 text-white">
+      <li class="list-group-item bg-primary">Task Name</li>
+      <a href="#" class="list-group-item list-group-item-primary list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Design the App thru Wireframe</h5>
+          <Medium>Done</Medium>
+        </div>
+        <p class="mb-1">Contains a Task Form with the required information (Name, Description, AssignedTo, DueDate, Status)</p>
+        <div class="d-flex w-100 justify-content-between">
+        <medium>Jason</medium><small>15/08/2020</small>
+        </div>
+      </a>
+      <a href="#" class="list-group-item list-group-item-secondary list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Implement Wireframe using Bootstrap</h5>
+          <Medium>Done</Medium>
+        </div>
+        <p class="mb-1">All input fields are mapped in the Task Form (Name, Description, AssignedTo, DueDate, Status).</p>
+        <div class="d-flex w-100 justify-content-between">
+          <medium>Rob</medium><small>31/08/2020</small>
+          </div>
+      </a>
+      <a href="#" class="list-group-item list-group-item-success list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Implement Wireframe using Bootstrap</h5>
+          <Medium>Review</Medium>
+        </div>
+        <p class="mb-1">A Select type is used for the different Status options (TODO, IN PROGRESS, REVIEW, DONE).</p>
+        <div class="d-flex w-100 justify-content-between">
+          <medium>Tim</medium><small>01/09/2020</small>
+          </div>
+        </a>
+      <a href="#" class="list-group-item list-group-item-danger list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Implement Javascript error message</h5>
+          <Medium>In Progress</Medium>
+        </div>
+        <p class="mb-1">All form fields are validated on form submission(Name, Description, AssignedTo, DueDate, Status).</p>
+        <div class="d-flex w-100 justify-content-between">
+        <medium>Ken</medium><small>10/09/2020</small>
+        </div>
+      </a>
+      <a href="#" class="list-group-item list-group-item-warning list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Implement Javascript error message</h5>
+          <Medium>To Do</Medium>
+        </div>
+        <p class="mb-1">A meaningful error message is displayed when a form field is invalid.</p>
+        <div class="d-flex w-100 justify-content-between">
+        <medium>Jason</medium><small>15/09/2020</small>
+        </div>
+      </a>
+    </section>
+  </main>
 
-    <h1>Task Planner</h1>
 
-
-  <!--  Task list form -->
-
-  <input type="submit" name="newTask" value="Create a New Task">
-<br><br><br>
-  <!--  Table data -->
-  <section>
-    <table>
-      <thead>
-        <tr>
-          <th>Priority</th>
-          <th>Description</th>
-          <th>Assigned to</th>
-          <th>Due Date</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Add color</td>
-          <td>Rob</td>
-          <td>Sept 1, 2020</td>
-          <td>Completed</td>    
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Add border</td>
-          <td>Jason</td>
-          <td>Aug 25, 2020</td>
-          <td>Completed</td>    
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Add form</td>
-          <td>ken</td>
-          <td>Aug 19, 2020</td>
-          <td>Started</td>    
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Make it responsive</td>
-          <td>Tim</td>
-          <td>Aug 30, 2020</td>
-          <td>Not Started</td>    
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-</main>
-  
-  <script src="js/app.js"></script>
 </body>
 </html>
