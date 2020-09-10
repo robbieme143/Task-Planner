@@ -10,21 +10,21 @@
 
 <body>
   <main class="bg-success p-5">
-    <form class="container bg-danger text-white p-5">
+    <form class="container bg-primary text-white p-5" name="updateForm" action="update_form.php" onsubmit="return validateTaskForm()" method="post">
       <br>
       <section class="form-group">
         <label>Name:</label><br>
-        <input class="form-control" name="name" placeholder="Task Name"></input>
+        <input class="form-control" name="TaskName" placeholder="Task Name"></input>
       </section>
       <br>
       <section class="form-group">
         <label>Description:</label><br>
-        <textarea class="form-control" name="description" placeholder="Description"></textarea>
+        <textarea class="form-control" name="Description" placeholder="Description"></textarea>
       </section>
       <br>
       <section class="form-group">
         <label>Assigned to:</label><br>
-        <select class="form-control" name="assignee">
+        <select class="form-control" name="Assignee">
           <option value="rob">Rob</option>
           <option value="jason">Jason</option>
           <option value="tim">Tim</option>
@@ -34,12 +34,12 @@
       <br>
       <section class="form-group">
         <label>Due Date:</label><br>
-        <input class="form-control" type="date" name="dueDate">
+        <input class="form-control" type="date" name="DueDate">
       </section>
       <br>
       <section class="form-group">
         <label>Status</label><br>
-        <select class="form-control" name="assignee">
+        <select class="form-control" name="Status">
           <option value="toDo">TO DO</option>
           <option value="inProgress">IN PROGRESS</option>
           <option value="review">REVIEW</option>
@@ -49,7 +49,7 @@
       <br>
       <section class="d-flex justify-content-around"  style="padding-bottom:50px">
                <div>
-               <button type="button" class="btn btn-success btn-lg">Update</button>
+               <button type="update" value="Update" class="btn btn-success btn-lg">Update</button>
                </div>
                <button type="button" class="btn btn-secondary btn-lg">Delete</button>
                </div>
@@ -60,5 +60,8 @@
      </section>
     </form>
   </main>
+
+  <script src="update-form.js"></script>
+
 </body>
 </html>
