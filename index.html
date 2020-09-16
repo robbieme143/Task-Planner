@@ -14,7 +14,7 @@
     <article class="container bg-success mt-5 p-2">
       <section class="p-3">
         <h1 class="text-white">Task Planner</h1><br>
-        <input type="submit" name="newTask" value="Create a New Task">
+        <button type="submit" onclick="window.location.href='#builtin-form'" name="newTask" class="btn btn-warning btn-lg">Create a New Task</button>
       </section>
     
     <section class="list-group p-3 text-white">
@@ -70,8 +70,66 @@
         </div>
       </a>
     </section>
+  </main>
+ <br> 
+<br>
+<hr>
+<br>
+  <main class="bg-white p-5">
+    <form id="builtin-form" class="container bg-primary text-white p-5" name="newForm"  onsubmit="return validateTaskForm()" method="post">
+      <br>
+      <section class="form-group">
+        <label>Name:</label><br>
+        <input class="form-control" name="TaskName" placeholder="Task Name"></input>
+      </section>
+      <br>
+      <section class="form-group">
+        <label>Description:</label><br>
+        <textarea class="form-control" name="Description" placeholder="Description"></textarea>
+      </section>
+      <br>
+      <section class="form-group">
+        <label>Assigned to:</label><br>
+        <select class="form-control" name="Assignee">
+          <option selected="selected"></option>
+          <option value="rob">Rob</option>
+          <option value="jason">Jason</option>
+          <option value="tim">Tim</option>
+          <option value="ken">Ken</option>
+        </select>
+      </section>
+      <br>
+      <section class="form-group">
+        <label>Due Date:</label><br>
+        <input class="form-control" type="date" name="DueDate">
+      </section>
+      <br>
+      <section class="form-group">
+        <label>Status</label><br>
+        <select class="form-control" name="Status">
+          <option selected="selected"></option>
+          <option value="toDo">TO DO</option>
+          <option value="inProgress">IN PROGRESS</option>
+          <option value="review">REVIEW</option>
+          <option value="done">DONE</option>
+        </select>
+      </section>
+      <br>
 
+      <section class="d-flex justify-content-around"  style="padding-bottom:50px">
+                <div>
+                <button type="submit" value="Submit" class="btn btn-success btn-lg">Submit</button>
+                </div>
+                <div>
+                <button type="button" class="btn btn-warning btn-lg">Close</button>
+                </div>
+         </div>
+      </section>
+    </form>
   </main>
   
 </body>
+<script src="js/taskManager.js"></script>
+<script src="js/index.js"></script>
+<script src="js/form.js"></script>
 </html>
