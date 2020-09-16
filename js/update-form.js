@@ -18,9 +18,21 @@ let validateTaskForm = () => {
     return false;
   }
 
+  var assignee = document.forms["updateForm"]["Assignee"].value;
+  if (assignee == "") {
+    alert("Please assign a person from the drop-down menu");
+    return false;
+  }
+
   var dueDate = document.forms["updateForm"]["DueDate"].value;
   if (dueDate == "") {
     alert("Due date of the task must be entered.");
+    return false;
+  }
+
+  var status = document.forms["updateForm"]["Status"].value;
+  if (status == "") {
+    alert("Please select status from the drop-down menu.");
     return false;
   }
 }
