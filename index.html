@@ -10,124 +10,73 @@
 
 <body>
 
-  <main class="container bg-white">
-    <article class="container bg-success mt-5 p-2">
-      <section class="p-3">
-        <h1 class="text-white">Task Planner</h1><br>
-        <button type="submit" onclick="window.location.href='#builtin-form'" name="newTask" class="btn btn-warning btn-lg">Create a New Task</button>
-      </section>
-    
-    <section class="list-group p-3 text-white">
-      <li class="list-group-item bg-primary">Task Name</li>
-      <a href="#" class="list-group-item list-group-item-primary list-group-item-action">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Design the App thru Wireframe</h5>
-          <Medium>Done</Medium>
-        </div>
-        <p class="mb-1">Contains a Task Form with the required information (Name, Description, AssignedTo, DueDate, Status)</p>
-        <div class="d-flex w-100 justify-content-between">
-        <medium>Jason</medium><small>15/08/2020</small>
-        </div>
-      </a>
-      <a href="#" class="list-group-item list-group-item-secondary list-group-item-action">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Implement Wireframe using Bootstrap</h5>
-          <Medium>Done</Medium>
-        </div>
-        <p class="mb-1">All input fields are mapped in the Task Form (Name, Description, AssignedTo, DueDate, Status).</p>
-        <div class="d-flex w-100 justify-content-between">
-          <medium>Rob</medium><small>31/08/2020</small>
-          </div>
-      </a>
-      <a href="#" class="list-group-item list-group-item-success list-group-item-action">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Implement Wireframe using Bootstrap</h5>
-          <Medium>Review</Medium>
-        </div>
-        <p class="mb-1">A Select type is used for the different Status options (TODO, IN PROGRESS, REVIEW, DONE).</p>
-        <div class="d-flex w-100 justify-content-between">
-          <medium>Tim</medium><small>01/09/2020</small>
-          </div>
-        </a>
-      <a href="#" class="list-group-item list-group-item-danger list-group-item-action">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Implement Javascript error message</h5>
-          <Medium>In Progress</Medium>
-        </div>
-        <p class="mb-1">All form fields are validated on form submission(Name, Description, AssignedTo, DueDate, Status).</p>
-        <div class="d-flex w-100 justify-content-between">
-        <medium>Ken</medium><small>10/09/2020</small>
-        </div>
-      </a>
-      <a href="#" class="list-group-item list-group-item-warning list-group-item-action">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Implement Javascript error message</h5>
-          <Medium>To Do</Medium>
-        </div>
-        <p class="mb-1">A meaningful error message is displayed when a form field is invalid.</p>
-        <div class="d-flex w-100 justify-content-between">
-        <medium>Jason</medium><small>15/09/2020</small>
-        </div>
-      </a>
-    </section>
-  </main>
- <br> 
-<br>
-<hr>
-<br>
-  <main class="bg-white p-5">
-    <form id="builtin-form" class="container bg-primary text-white p-5" name="newForm"  onsubmit="return validateTaskForm()" method="post">
-      <br>
-      <section class="form-group">
-        <label>Name:</label><br>
-        <input class="form-control" name="TaskName" placeholder="Task Name"></input>
-      </section>
-      <br>
-      <section class="form-group">
-        <label>Description:</label><br>
-        <textarea class="form-control" name="Description" placeholder="Description"></textarea>
-      </section>
-      <br>
-      <section class="form-group">
-        <label>Assigned to:</label><br>
-        <select class="form-control" name="Assignee">
-          <option selected="selected"></option>
-          <option value="rob">Rob</option>
-          <option value="jason">Jason</option>
-          <option value="tim">Tim</option>
-          <option value="ken">Ken</option>
-        </select>
-      </section>
-      <br>
-      <section class="form-group">
-        <label>Due Date:</label><br>
-        <input class="form-control" type="date" name="DueDate">
-      </section>
-      <br>
-      <section class="form-group">
-        <label>Status</label><br>
-        <select class="form-control" name="Status">
-          <option selected="selected"></option>
-          <option value="toDo">TO DO</option>
-          <option value="inProgress">IN PROGRESS</option>
-          <option value="review">REVIEW</option>
-          <option value="done">DONE</option>
-        </select>
-      </section>
-      <br>
-
-      <section class="d-flex justify-content-around"  style="padding-bottom:50px">
-                <div>
-                <button type="submit" value="Submit" class="btn btn-success btn-lg">Submit</button>
-                </div>
-                <div>
-                <button type="button" class="btn btn-warning btn-lg">Close</button>
-                </div>
-         </div>
-      </section>
-    </form>
-  </main>
+  <main>
+    <section class="container bg-white">
+      <article class="container bg-success mt-5 p-2">
+        <section class="p-3">
+          <h1 class="text-white">Task Planner</h1><br>
+          <button type="submit" onclick="window.location.href='#builtin-form'" name="newTask" class="btn btn-warning btn-lg">Create a New Task</button>
+        </section>
   
+      <ul id="tasksList" class="list-group p-3 text-white"></ul>
+    </section>
+   <br> 
+  <br>
+  <hr>
+  <br>
+    <section class="bg-white p-5">
+      <form id="builtin-form" class="container bg-primary text-white p-5" name="newForm" method="post">
+        <br>
+        <section class="form-group">
+          <label>Name:</label><br>
+          <input class="form-control" id="TaskName" name="TaskName" placeholder="Task Name"></input>
+        </section>
+        <br>
+        <section class="form-group">
+          <label>Description:</label><br>
+          <textarea class="form-control" id="Description" name="Description" placeholder="Description"></textarea>
+        </section>
+        <br>
+        <section class="form-group">
+          <label>Assigned to:</label><br>
+          <select class="form-control" id="Assignee" name="Assignee">
+            <option selected="selected"></option>
+            <option value="rob">Rob</option>
+            <option value="jason">Jason</option>
+            <option value="tim">Tim</option>
+            <option value="ken">Ken</option>
+          </select>
+        </section>
+        <br>
+        <section class="form-group">
+          <label>Due Date:</label><br>
+          <input class="form-control" type="date" id="DueDate" name="DueDate">
+        </section>
+        <br>
+        <section class="form-group">
+          <label>Status</label><br>
+          <select class="form-control" id="Status" name="Status">
+            <option selected="selected"></option>
+            <option value="TODO">TO DO</option>
+            <option value="IN PROGRESS">IN PROGRESS</option>
+            <option value="REVIEW">REVIEW</option>
+            <option value="DONE">DONE</option>
+          </select>
+        </section>
+        <br>
+  
+        <section class="d-flex justify-content-around"  style="padding-bottom:50px">
+                  <div>
+                  <button type="submit" value="Submit" class="btn btn-success btn-lg">Submit</button>
+                  </div>
+                  <div>
+                  <button type="button" class="btn btn-warning btn-lg">Close</button>
+                  </div>
+           </div>
+        </section>
+      </form>
+    </section>
+</main>
 </body>
 <script src="js/taskManager.js"></script>
 <script src="js/index.js"></script>
