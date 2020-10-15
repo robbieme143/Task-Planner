@@ -15,7 +15,7 @@
       <section class="container bg-success mt-5 p-2">
         <section class="p-3">
           <h1 class="text-white">Task Planner</h1><br>
-          <button type="submit" onclick="window.location.href='#builtin-form'" name="newTask" class="btn btn-warning btn-lg">Create a New Task</button>
+          <button type="submit" onclick="document.getElementById('builtin-form').style.display = 'block'; window.location.reload(true)" name="newTask" class="btn btn-warning btn-lg">Create a New Task</button>
         </section>
   
       <ul id="tasksList" class="list-group p-3 text-white"></ul>
@@ -68,10 +68,12 @@
   
         <section class="d-flex justify-content-around"  style="padding-bottom:50px">
                   <div>
-                  <button type="submit" value="Submit" class="btn btn-success btn-lg">Submit</button>
+                  <button type="submit" id="submitButton" value="Submit" class="btn btn-success btn-lg">Submit</button>
                   </div>
                   <div>
-                  <button type="button" class="btn btn-warning btn-lg">Close</button>
+                  <button type="button" class="btn btn-warning btn-lg" onclick="document.getElementById('builtin-form').style.display = 'none'">Close</button>
+                  <input type="hidden" id="submitMode" name="submitMode" value="true" />
+                  <input type="hidden" id="currentTaskId" name="currentTaskId" value="" />
                   </div>
            </div>
         </section>

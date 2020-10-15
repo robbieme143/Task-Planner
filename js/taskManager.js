@@ -1,20 +1,26 @@
 const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => 
 `   
     <li class="list-group-item list-group-item-primary  bg-primary text-white" text-white data-task-id=${id}>
-          <div class="d-flex w-100 mt-1 justify-content-between ">
-            <h5>${name}</h5>
-            <span class="badge ${status === 'TODO' ? 'badge-danger' : 'badge-success'}">${status}</span>
+        <div class="d-flex w-100 mt-1 justify-content-between ">
+          <h5>${name}</h5>
+          <span class="badge ${status === 'TODO' ? 'badge-danger' : 'badge-success'}">${status}</span>
         </div>
         <p class="d-flex w-100 mb-5 ">${description}</p>
         <div class="d-flex w-100 justify-content-between">
-            <medium>${assignedTo}</medium>
-            <medium>Due: ${dueDate}</medium>
+          <medium>${assignedTo}</medium>
+          <medium>Due: ${dueDate}</medium>
         </div>
+
         <div class="d-flex w-100 justify-content-between">
-        <button class="btn btn-danger delete-button">Delete</button>
-            <button class="btn btn-outline-dark bg-warning text-white done-button ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
+          <button class="btn btn-danger delete-button">Delete</button>
+          <audio id="shred" src="sounds/shred.mp3"></audio>
+          <button class="btn btn-secondary update-button ${(status === 'TODO') || (status === 'REVIEW') || (status === 'IN PROGRESS') ? 'visible' : 'invisible'}" onclick="window.location.href='#builtin-form'" >Update</button>
+          <audio id="gasp" src="sounds/gasp.mp3"></audio>
+          <button class="btn btn-outline-dark bg-warning text-white done-button ${(status === 'TODO') || (status === 'REVIEW') || (status === 'IN PROGRESS') ? 'visible' : 'invisible'}">Mark As Done</button>
+          <audio id="applause" src="sounds/applause.mp3"></audio>
         </div>
     </li>
+    <audio id="magic" src="sounds/magic.mp3"></audio>
     <br>
 `;
 
@@ -38,6 +44,16 @@ class TaskManager {
       this.tasks.push(task);
   }
 
+  updateTask(id,name, description, assignedTo, dueDate,status){
+
+    let task = this.getTaskById(id);
+    task.name = name;
+    task.description = description;
+    task.assignedTo = assignedTo;
+    task.dueDate = dueDate;
+    task.status = status;
+  }
+
   getTaskById(taskId) {
  // Create a variable to store the found task
     let foundTask;
@@ -46,7 +62,7 @@ class TaskManager {
     // Get the current task in the loop
         const task = this.tasks[i];
       // Check if its the right task by comparing the task's id to the id passed as a parameter
-         if (task.id === taskId) {
+         if (task.id == taskId) {
       // Store the task in the foundTask variable       
             foundTask = task;
         }
@@ -84,12 +100,12 @@ class TaskManager {
             if (task.id !== taskId) {
       // Push the task to the newTasks array
                 newTasks.push(task);
+   
             }       
         }
       // Set this.tasks to newTasks
         this.tasks = newTasks;    
   }
-
 
   render() {
 
